@@ -1,4 +1,4 @@
-import { Download, AlertCircle, CheckCircle, Laptop, FileText, MousePointer, FolderOpen, Smartphone, Star, Wrench } from 'lucide-react';
+import { Download, AlertCircle, CheckCircle, Laptop, FileText, MousePointer, FolderOpen, Smartphone} from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 

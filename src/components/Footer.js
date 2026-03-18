@@ -36,45 +36,20 @@ const message =
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-gray-300 hover:text-lime-400 transition-colors">
+                <Link onClick={(e) => e.preventDefault()} to="/" className="text-gray-300 hover:text-lime-400 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-gray-300 hover:text-lime-400 transition-colors">
+                <Link onClick={(e) => e.preventDefault()} to="/" className="text-gray-300 hover:text-lime-400 transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-gray-300 hover:text-lime-400 transition-colors">
+                <Link onClick={(e) => e.preventDefault()} to="/" className="text-gray-300 hover:text-lime-400 transition-colors">
                   Contact Us
                 </Link>
               </li>
-              {/* <li>
-                <Link to="/privacy" className="text-gray-300 hover:text-lime-400 transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/help" className="text-gray-300 hover:text-lime-400 transition-colors">
-                  Help/FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to="/earn" className="text-gray-300 hover:text-lime-400 transition-colors">
-                  Earn With Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/donate" className="text-gray-300 hover:text-lime-400 transition-colors">
-                  Donate Resources
-                </Link>
-              </li>
-              <li>
-                <Link to="/advertising" className="text-gray-300 hover:text-lime-400 transition-colors">
-                  Advertising
-                </Link>
-              </li> */}
             </ul>
           </div>
 
@@ -89,14 +64,14 @@ const message =
                 <MessageCircle className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com"
                 className="bg-red-600 hover:bg-red-700 p-3 rounded-full transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://facebook.com"
                 className="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition-colors"
                 aria-label="Facebook"
               >

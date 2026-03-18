@@ -15,7 +15,7 @@ function Admin() {
   const [images, setImages] = useState([]);
   const [files, setFiles] = useState([]);
   const [products, setProducts] = useState([]);
-
+// console.log(products)
 
   // console.log("product",products)
   const [editId, setEditId] = useState(null);
@@ -287,6 +287,7 @@ const handleDownload = async (link) => {
                 {images?.map(img => (
                   <img
                     key={img.id}
+                    alt={img.title || "product image"}
                     src={`${BASE_URL}/api/drive/image/${img.id}`}
                     onClick={() => setImage(`${BASE_URL}/api/drive/image/${img.id}`)}
                     style={{
@@ -321,6 +322,7 @@ const handleDownload = async (link) => {
                 {files?.map(file => (
                   <div
                     key={file.id}
+                    alt={file.title || "product image"}
                     // onClick={() => setDownloadLink(`https://drive.google.com/uc?export=download&id=${file.id}`)}
                     onClick={() => setDownloadLink(`${BASE_URL}/api/drive/download/${file.id}?name=${encodeURIComponent(file.name)}`)}
                     style={{
@@ -406,6 +408,7 @@ const handleDownload = async (link) => {
                     <td style={{ padding: "10px" }}>
                       <img
                         src={p.image}
+                        alt={p.title || "product image"}
                         style={{ width: "70px", height: "50px", objectFit: "cover", borderRadius: "6px" }}
                       />
                     </td>
@@ -430,7 +433,7 @@ const handleDownload = async (link) => {
           <div className="mobileCards">
             {products?.map((p) => (
               <div key={p._id} className="card">
-                <img src={p.image} className="card-image" />
+                <img src={p.image} alt={p.title || "product image"} className="card-image" />
                 <div className="card-body">
                   <h4 className="card-title">{p.title}</h4>
                   <p className="card-type">Type: {p.type}</p>
