@@ -155,7 +155,7 @@ export default function Detail() {
       <Header />
 
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-3 md:px-4 py-8">
           <Link
             to="/"
             className="inline-flex items-center gap-2 text-teal-700 hover:text-teal-800 mb-6 font-semibold"
@@ -193,7 +193,7 @@ export default function Detail() {
 
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden mt-8">
-            <div className="grid md:grid-cols-2 gap-8 p-8">
+            <div className="grid md:grid-cols-2 gap-8 p-6 sm:p-8">
               <div>
                 <div className="relative rounded-lg overflow-hidden">
 
@@ -212,7 +212,7 @@ export default function Detail() {
                 <div className="mt-6 text-center">
                   <div className="bg-gray-50 p-3 rounded">
                     <p className="font-bold text-[#1F6272]">
-                      Uploaded by: VECTOR SEA Digital Marketing Company
+                      Uploaded by: CDR WORLD Digital Marketing Company
                     </p>
                   </div>
                 </div>
@@ -222,11 +222,11 @@ export default function Detail() {
                   <>
                     {/*button show only Premium*/}
                     <div className="flex justify-center mt-8">
-                      <button
-                        className="inline-flex items-center gap-3 bg-teal-700 text-white px-8 py-4 rounded-xl text-xl md:text-2xl font-extrabold hover:bg-teal-800 hover:shadow-2xl premium-pulse"
-                      >
-                        📥 Purchase & Get File
-                      </button>
+                     <button
+                      className="w-full bg-teal-700 text-white py-4 px-6 rounded-xl font-extrabold text-xl md:text-2xl flex items-center justify-center gap-3 transition-colors hover:bg-teal-800 hover:shadow-2xl premium-hover-pulse "
+                    >
+                      📥 Purchase & Get File
+                    </button>
                     </div>
 
                     <style>
@@ -319,7 +319,7 @@ export default function Detail() {
                           📞 Need Help? — Support Available
                         </h3>
                         <p className="text-base md:text-lg">
-                          📞 For help or support, contact Latestcdrsea.com team
+                          📞 For help or support, contact cdrworld.vercel.app team
                           anytime on WhatsApp.
                           <br />
                           🟢 WhatsApp Number: <strong>0301-5702929</strong>
@@ -389,8 +389,8 @@ export default function Detail() {
                     {/* Pricing Plans show only premium*/}
                     <div className="mb-10 mt-10">
                       <div className="text-center mb-8">
-                        <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent flex items-center justify-center gap-3">
-                          <Trophy className="w-8 h-8 text-yellow-500" />
+                          <h2 className="tracking-tighter sm:tracking-normal text-xl sm:text-3xl lg:text-4xl font-extrabold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent flex items-center justify-center gap-3">
+                          <Trophy className="w-6 h-6  sm:w-8 sm:h-8 text-yellow-500" />
                           Premium Files Pricing Plans
                         </h2>
 
@@ -437,7 +437,7 @@ export default function Detail() {
                     href={file.downloadLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-3 w-full bg-teal-700 text-white py-4 px-6 rounded-xl font-extrabold text-xl md:text-2xl flex items-center justify-center gap-3 transition-colors hover:bg-teal-800 hover:shadow-2xl"
+                    className="mb-3 w-full bg-teal-700 text-white py-4 px-6 rounded-xl font-extrabold text-lg sm:text-xl md:text-[22px] lg:text-2xl flex items-center justify-center gap-3 transition-colors hover:bg-teal-800 hover:shadow-2xl"
                   >
                     <Download className="w-5 h-5" />
                     Download Now - Free

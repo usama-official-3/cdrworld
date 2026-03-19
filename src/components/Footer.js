@@ -4,7 +4,7 @@ import { Youtube, Facebook, MessageCircle, Mail } from 'lucide-react';
 export default function Footer() {
    const phoneNumber = "923015702929";
 const message =
-  "Assalam-o-Alaikum.\n\nI’m interested in purchasing a Premium CorelDRAW file from Latestcdrsea.com.\nKindly share the payment details and the purchase process.\n\nThank you.";
+  "Assalam-o-Alaikum.\n\nI’m interested in purchasing a Premium CorelDRAW file from cdrworld.vercel.app.\nKindly share the payment details and the purchase process.\n\nThank you.";
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -81,7 +81,7 @@ const message =
             <div className="text-sm text-gray-300 mt-6">
               <p className="font-semibold mb-2">Download High Quality CDR Files Free of Premium use</p>
               <p className="text-xs">
-                Latest CDR Sea Copyright © 2025. All Rights Reserved.
+                Latest CDR World Copyright © 2026. All Rights Reserved.
               </p>
             </div>
           </div>

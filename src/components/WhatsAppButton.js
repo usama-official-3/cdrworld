@@ -5,7 +5,7 @@ export default function WhatsAppButton() {
 
   const phoneNumber = "923015702929";
 const message =
-  "Assalam-o-Alaikum.\n\nI’m interested in purchasing a Premium CorelDRAW file from Latestcdrsea.com.\nKindly share the payment details and the purchase process.\n\nThank you.";
+  "Assalam-o-Alaikum.\n\nI’m interested in purchasing a Premium CorelDRAW file from cdrworld.vercel.app.\nKindly share the payment details and the purchase process.\n\nThank you.";
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

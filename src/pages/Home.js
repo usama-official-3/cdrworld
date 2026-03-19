@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams, useNavigate } from "react-router-dom";
-import { CheckCircle, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -79,10 +79,10 @@ export default function Home() {
 
           <div className="container mx-auto px-4 text-center">
 
-            <CheckCircle className="inline w-8 h-8 text-lime-500 mb-2" />
+        
 
             <h1 className="text-2xl md:text-3xl font-bold text-teal-700 mb-2">
-              Vector Sea - CDR CorelDRAW Files
+               CDR WORLD - CorelDRAW Files
             </h1>
 
             <p className="text-gray-600">
