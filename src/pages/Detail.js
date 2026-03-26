@@ -12,9 +12,9 @@ import {
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-import image1 from "../images/image1.webp";
-import image2 from "../images/image2.webp";
-import image3 from "../images/image3.webp";
+import image1 from "../images/image1.jpg";
+import image2 from "../images/image2.jpg";
+import image3 from "../images/image3.jpg";
 
 
 
@@ -35,23 +35,23 @@ const pricingPlans = [
   },
   {
     title: "Basic Bundle Plan",
-    items: ["3 Premium Files"],
+    items: ["4 Premium Files"],
     price: "Rs. 100",
   },
   {
     title: "Pro Bundle Plan",
-    items: ["5 Premium Files"],
+    items: ["7 Premium Files"],
     price: "Rs. 150",
   },
   {
     title: "Mega Bundle Plan",
     items: ["10 Premium Files"],
-    price: "Rs. 250",
+    price: "Rs. 200",
   },
   {
     title: "All-Access Premium Plan",
     items: ["All Premium Files Access", "1 Month Access"],
-    price: "Rs. 700 / Month",
+    price: "Rs. 400 / Month",
   },
 ];
 
@@ -178,7 +178,7 @@ export default function Detail() {
                         <img
                           src={img}
                           alt={`Premium Plan Offer ${index + 1}`}
-                          className=" w-full aspect-[764/1080] object-contain transition-transform duration-500 group-hover:scale-105
+                          className=" w-full aspect-[1002/1600] object-contain transition-transform duration-500 group-hover:scale-105
             "
                         />
                       </div>

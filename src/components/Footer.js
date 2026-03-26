@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Youtube, Facebook, MessageCircle, Mail } from 'lucide-react';
-
+import logo from "../images/logo.png";
 export default function Footer() {
    const phoneNumber = "923015702929";
 const message =
@@ -13,9 +13,22 @@ const message =
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="bg-white text-teal-900 px-3 py-2 rounded font-bold text-xl inline-block mb-4">
-              VECTOR SEA
-            </div>
+         <Link to="/" className="inline-block mb-4">
+              <div className="bg-white p-1 rounded-lg shadow-md w-fit">
+                <img
+                  src={logo}
+                  alt="CDR World Logo"
+                  className=" h-7
+        xxsm:h-8
+        xsm:h-9
+        sm:h-11
+        md:h-11
+        2xl:h-12
+      
+        object-contain"
+                />
+              </div>
+            </Link>
             <p className="text-sm text-gray-300 leading-relaxed">
               A professional platform for CorelDRAW vector files. Perfect for graphic designers, printers & branding projects!
             </p>

@@ -12,7 +12,7 @@ import {
   ShieldUser,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext"; // adjust path if needed
-
+import logo from "../images/logo.png"; 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { user, logout } = useAuth();
@@ -24,6 +24,22 @@ const isAdmin = user?.role === "admin";
   `flex items-center gap-1 transition ${
     isActive ? "text-lime-400 font-semibold" : "hover:text-lime-400"
   }`;
+
+   const formatUserName = (user) => {
+  if (user?.name) return user.name;
+
+  if (user?.email) {
+    let namePart = user.email.split("@")[0]; // before @
+
+    // remove numbers
+    namePart = namePart.replace(/[0-9]/g, "");
+
+    // capitalize first letter
+    return namePart.charAt(0).toUpperCase() + namePart.slice(1);
+  }
+
+  return "User";
+};
   return (
     <header className="bg-teal-700 text-white">
       <div className="container mx-auto px-4">
@@ -31,11 +47,23 @@ const isAdmin = user?.role === "admin";
         <div className="flex items-center justify-between py-3">
 
           {/* LOGO */}
-          <Link to="/" className="flex items-center">
-            <div className="bg-white text-teal-700 px-4 py-2 rounded-md font-bold text-lg sm:text-xl tracking-wide">
-              VECTOR SEA
-            </div>
-          </Link>
+<Link to="/" className="flex items-center">
+ <div className="bg-white p-1 rounded-lg shadow-md w-fit">
+    <img
+      src={logo}
+      alt="CDR World Logo"
+      className=" h-7
+        xxsm:h-8
+        xsm:h-9
+        sm:h-11
+        md:h-11
+        2xl:h-12
+      
+        object-contain"
+    />
+    </div>
+</Link>
+
 
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
@@ -85,7 +113,7 @@ const isAdmin = user?.role === "admin";
                 <div className="flex items-center gap-1 text-white/90">
                   <User className="w-4 h-4" />
                   <span className="text-sm">
-                    {user.name || user.email}
+                     {formatUserName(user)}
                   </span>
                 </div>
 
@@ -163,7 +191,7 @@ const isAdmin = user?.role === "admin";
               <>
                 <div className="flex items-center gap-2 text-white/90">
                   <User className="w-4 h-4" />
-                  <span>{user.name || user.email}</span>
+                   <span>{formatUserName(user)}</span>
                 </div>
 
                 <button
