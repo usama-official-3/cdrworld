@@ -9,9 +9,11 @@ import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
 import ProtectedRoute from "./components/ProtectedRoute";
 import WhatsAppButton from "./components/WhatsAppButton";
+import {HelmetProvider } from 'react-helmet-async';
 export default function App() {
   return (
     <>
+      <HelmetProvider>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/download-help" element={<DownloadHelp />} />
@@ -27,6 +29,7 @@ export default function App() {
         }
       />
     </Routes>
+    </HelmetProvider>
     <WhatsAppButton/>
     </>
   );
