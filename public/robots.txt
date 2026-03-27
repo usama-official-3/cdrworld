@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Disallow: /admin   # Keep admin private
+Allow: /           # Allow all other public pages
+
+# Sitemap location
+Sitemap: https://cdrworld.vercel.app/sitemap.xml

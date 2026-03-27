@@ -1,9 +1,47 @@
 import { Download, AlertCircle, CheckCircle, Laptop, FileText, MousePointer, FolderOpen, Smartphone} from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function DownloadHelp() {
   return (
+<>
+  <SEO
+        title="Download Guide | How to Download CDR Files | CDR World"
+        description="Learn how to download free CDR and CMX vector files from CDR World. Step-by-step guide for PC users with complete instructions."
+        keywords="CDR download guide, how to download CDR files, CorelDRAW download help, CMX files guide, vector files download tutorial"
+        canonical="https://cdrworld.vercel.app/download-help"
+        og={{
+          title: "Download Guide | CDR World",
+          description: "Step-by-step guide to download CDR & CMX files",
+          url: "https://cdrworld.vercel.app/download-help",
+          type: "article",
+          site_name: "CDR World",
+          locale: "en_US",
+        }}
+        twitter={{
+          title: "CDR Download Guide",
+          description: "Learn how to download CorelDRAW files step-by-step.",
+          card: "summary",
+          site: "@cdrworld",
+          creator: "@cdrworld",
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: "How to Download CDR Files",
+          description: "Step-by-step guide to download CorelDRAW CDR and CMX files from CDR World.",
+          step: [
+            { "@type": "HowToStep", name: "Open Website on PC", text: "Use a computer or laptop and open browser." },
+            { "@type": "HowToStep", name: "Open File Page", text: "Navigate to desired file page." },
+            { "@type": "HowToStep", name: "Click Download", text: "Click download button to start." },
+            { "@type": "HowToStep", name: "Save File", text: "Save file to your system." },
+          ],
+        }}
+        extraMeta={[{ name: "author", content: "CDR World Team" }]}
+      />
+
+
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
 
@@ -217,5 +255,6 @@ export default function DownloadHelp() {
 
       <Footer />
     </div>
+    </>
   );
 }

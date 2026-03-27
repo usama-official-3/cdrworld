@@ -4,6 +4,7 @@ import { Mail, AlertCircle, CheckCircle } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -57,6 +58,42 @@ export default function Signup() {
   };
 
   return (
+
+    <>
+    <SEO
+        title="Sign Up | CDR World"
+        description="Create your CDR World account to access free and premium CorelDRAW (CDR) files. Join now and start downloading editable vector designs."
+        keywords="CDR World sign up, CorelDRAW account, CDR files registration, vector design signup"
+        canonical="https://cdrworld.vercel.app/signUp"
+        og={{
+          title: "Sign Up | CDR World",
+          description:
+            "Create your CDR World account to access free and premium CorelDRAW (CDR) files.",
+          type: "website",
+          url: "https://cdrworld.vercel.app/signUp",
+          site_name: "CDR World",
+        }}
+        twitter={{
+          card: "summary_large_image",
+          title: "Sign Up | CDR World",
+          description:
+            "Create your CDR World account to access free and premium CorelDRAW (CDR) files.",
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Sign Up - CDR World",
+          url: "https://cdrworld.vercel.app/signUp",
+          description:
+            "Create your CDR World account to access free and premium CorelDRAW (CDR) files.",
+          potentialAction: {
+            "@type": "RegisterAction",
+            target: "https://cdrworld.vercel.app/signUp",
+            name: "Sign Up",
+          },
+        }}
+      />
+ 
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
        <Header/>
       
@@ -137,5 +174,6 @@ export default function Signup() {
       
        <Footer/>
     </div>
+       </>
   );
 }

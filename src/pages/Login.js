@@ -4,6 +4,7 @@ import { Mail, Lock, AlertCircle, Loader } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -35,6 +36,42 @@ export default function Login() {
   };
 
   return (
+
+    <>
+     {/* SEO with structured data */}
+      <SEO
+        title="Login | CDR World"
+        description="Sign in to your CDR World account to access free and premium CorelDRAW (CDR) files. Secure login for designers and businesses."
+        keywords="CDR World login, CorelDRAW account, CDR files access, vector design login"
+        canonical="https://cdrworld.vercel.app/login"
+        og={{
+          title: "Login | CDR World",
+          description: "Secure login to access free and premium CorelDRAW (CDR) files.",
+          type: "website",
+          url: "https://cdrworld.vercel.app/login",
+          site_name: "CDR World",
+        }}
+        twitter={{
+          card: "summary_large_image",
+          title: "Login | CDR World",
+          description: "Secure login to access free and premium CorelDRAW (CDR) files.",
+        }}
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Login - CDR World",
+          url: "https://cdrworld.vercel.app/login",
+          description:
+            "Sign in to your CDR World account to access free and premium CorelDRAW (CDR) files.",
+          potentialAction: {
+            "@type": "LoginAction",
+            target: "https://cdrworld.vercel.app/login",
+            name: "Sign in",
+          },
+        }}
+      />
+
+
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col">
       <Header/>
       <main className="flex-1 flex items-center justify-center px-4 py-16">
@@ -121,5 +158,6 @@ export default function Login() {
      
       <Footer/>
     </div>
+        </>
   );
 }
