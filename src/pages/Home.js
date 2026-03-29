@@ -94,23 +94,24 @@ export default function Home() {
 
     <>
      <SEO
-        title="CDR World - Free & Premium CorelDRAW (CDR) Files Download"
+        title="Free CDR Files Download | CorelDRAW Designs | CDRWORLD"
         description="Download high-quality CorelDRAW (CDR) vector files for free and premium use. Explore logo designs, stickers, business cards, vehicle branding and more at CDR World."
         keywords="CDR files, CorelDRAW designs, free CDR download, premium vector files, CorelDRAW templates, logo design CDR, sticker design CDR, vehicle branding CDR, vector files download"
         canonical="https://cdrworld.vercel.app/"
         og={{
-          title: "CDR World - CorelDRAW Files Download",
+          title: "Free CDR Files Download | CDRWORLD",
           description:
             "Browse and download free & premium CorelDRAW (CDR) vector files. High-quality editable designs available.",
           url: "https://cdrworld.vercel.app/",
           type: "website",
-          image: "https://cdrworld.vercel.app/preview.png",
+          image: "https://cdrworld.vercel.app/cdrworld-preview.png",
         }}
         twitter={{
           card: "summary_large_image",
           title: "CDR World - CorelDRAW Files",
           description: "Download free and premium CorelDRAW vector files easily.",
-          image: "https://cdrworld.vercel.app/preview.png",
+          image: "https://cdrworld.vercel.app/cdrworld-preview.png",
+          site: "@cdrworld", 
         }}
         structuredData={structuredData}
         extraMeta={[{ name: "theme-color", content: "#0f766e" }]}

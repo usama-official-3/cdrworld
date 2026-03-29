@@ -16,11 +16,18 @@ export default function SEO({
   return (
     <Helmet>
       {/* TITLE & META */}
-      {title && <title>{title}</title>}
-      {description && <meta name="description" content={description} />}
+      <title>{title || "CDRWORLD"}</title>
+           <meta
+        name="description"
+        content={description || "Free CDR files download"}
+      />
       {keywords && <meta name="keywords" content={keywords} />}
       {canonical && <link rel="canonical" href={canonical} />}
       <meta name="robots" content="index, follow" />
+
+
+      {/* ✅ ADDED: Favicon fallback */}
+      <link rel="icon" href="/favicon.ico" /> 
 
       {/* EXTRA META */}
       {extraMeta.map((meta, i) => (
@@ -33,6 +40,12 @@ export default function SEO({
       {og.url && <meta property="og:url" content={og.url} />}
       {og.type && <meta property="og:type" content={og.type} />}
       {og.image && <meta property="og:image" content={og.image} />}
+
+      {/* ✅ ADDED: Important OG tags */}
+      <meta property="og:image:width" content="1200" /> {/* ADDED */}
+      <meta property="og:image:height" content="630" /> {/* ADDED */}
+      <meta property="og:site_name" content="CDRWORLD" /> {/* ADDED */}
+      
       {og.site_name && <meta property="og:site_name" content={og.site_name} />}
       {og.locale && <meta property="og:locale" content={og.locale} />}
 
