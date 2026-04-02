@@ -5,7 +5,7 @@
   <!-- HOME PAGE -->
   <url>
     <loc>https://cdrworld.vercel.app/</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
 
@@ -18,7 +18,7 @@
   <!-- LOGIN PAGE -->
   <url>
     <loc>https://cdrworld.vercel.app/login</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -26,7 +26,7 @@
   <!-- SIGNUP PAGE -->
   <url>
     <loc>https://cdrworld.vercel.app/signUp</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -34,7 +34,7 @@
   <!-- DOWNLOAD GUIDE -->
   <url>
     <loc>https://cdrworld.vercel.app/download-help</loc>
-    <lastmod>2026-03-27</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

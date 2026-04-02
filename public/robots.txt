@@ -1,7 +1,6 @@
 
 User-agent: *
-Disallow: /admin   # Keep admin private
-Allow: /           # Allow all other public pages
+Disallow: /admin   
+Allow: /           
 
-# Sitemap location
 Sitemap: https://cdrworld.vercel.app/sitemap.xml
