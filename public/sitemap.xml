@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- HOME PAGE -->
   <url>
     <loc>https://cdrworld.vercel.app/</loc>
     <lastmod>2025-03-27</lastmod>
@@ -15,23 +14,6 @@
     </image:image>
   </url>
 
-  <!-- LOGIN PAGE -->
-  <url>
-    <loc>https://cdrworld.vercel.app/login</loc>
-    <lastmod>2025-03-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- SIGNUP PAGE -->
-  <url>
-    <loc>https://cdrworld.vercel.app/signUp</loc>
-    <lastmod>2025-03-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- DOWNLOAD GUIDE -->
   <url>
     <loc>https://cdrworld.vercel.app/download-help</loc>
     <lastmod>2025-03-27</lastmod>
