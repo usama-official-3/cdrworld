@@ -288,7 +288,7 @@ const handleDownload = async (link) => {
                   <img
                     key={img.id}
                     alt={img.title || "product image"}
-                    src={`${BASE_URL}/api/drive/image/${img.id}`}
+                    src={`${BASE_URL}/api/drive/image/${img.id}?w=400&q=70`}
                     onClick={() => setImage(`${BASE_URL}/api/drive/image/${img.id}`)}
                     style={{
                       width: "100%",
@@ -407,7 +407,7 @@ const handleDownload = async (link) => {
                   <tr key={p._id} style={{ borderTop: "1px solid #eee" }}>
                     <td style={{ padding: "10px" }}>
                       <img
-                        src={p.image}
+                        src={`${p.image}?w=400&q=70`}
                         alt={p.title || "product image"}
                         style={{ width: "70px", height: "50px", objectFit: "cover", borderRadius: "6px" }}
                       />

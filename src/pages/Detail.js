@@ -171,14 +171,14 @@ export default function Detail() {
           description: `Download ${file?.title} - High-quality editable CorelDRAW file.`,
           type: "product",
           url: `https://cdrworld.vercel.app/detail/${id}`,
-          image: file?.image,
+          image:`${file?.image}?w=400&q=70`,
           site_name: "CDR World",
         }}
         twitter={{
           card: "summary_large_image",
           title: file?.title,
           description: `Download ${file?.title} CorelDRAW file.`,
-          image: file?.image,
+          image: `${file?.image}?w=400&q=70`,
         }}
         structuredData={
           file
@@ -249,9 +249,17 @@ export default function Detail() {
                   <div className="relative rounded-lg overflow-hidden">
 
                     <img
-                      loading="lazy"
-                      src={file.image}
-                      alt={file.title}
+                       src={`${file.image}?w=800&q=80`}
+  srcSet={`
+    ${file.image}?w=400&q=70 400w,
+    ${file.image}?w=800&q=80 800w,
+    ${file.image}?w=1200&q=90 1200w
+  `}
+  sizes="(max-width: 768px) 100vw, 50vw"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+  alt={file.title}
                       className="w-full h-auto"
                     />
                     <div className="absolute top-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center gap-2">
@@ -587,7 +595,7 @@ export default function Detail() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-                {relatedFiles.map((related) => (
+                {relatedFiles.map((related ,index) => (
 
                   <Link
                     key={related._id}
@@ -596,9 +604,21 @@ export default function Detail() {
                   >
 
                     <img
-                      loading="lazy"
-                      src={related.image}
-                      alt={related.title}
+                      src={`${file.image}?w=400&q=70`}
+                          srcSet={`
+    ${related.image}?w=300&q=60 300w,
+    ${related.image}?w=400&q=70 400w,
+    ${related.image}?w=600&q=80 600w
+  `}
+  
+                          loading={index < 3 ? "eager" : "lazy"}
+                          fetchpriority={index < 3 ? "high" : "auto"}
+                          decoding="async"
+                          width="400"
+                          height="300"
+                          style={{ aspectRatio: "4/3" }}
+                          alt={related.title}
+
                       className="w-full h-40 object-cover"
                     />
 

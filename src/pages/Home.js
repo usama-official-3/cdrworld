@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { Star } from "lucide-react";
 import Header from "../components/Header";
@@ -12,7 +12,7 @@ export default function Home() {
   const [category, setCategory] = useState("all");
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const [totalPages, setTotalPages] = useState(1);
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
@@ -28,11 +28,14 @@ export default function Home() {
 
   // LOAD PRODUCTS
   useEffect(() => {
+    setLoading(true);
 
-    fetch("https://cdr-backend-murex.vercel.app/api/products")
+    fetch(`https://cdr-backend-murex.vercel.app/api/products?page=${currentPage}&limit=${FILES_PER_PAGE}`)
       .then(res => res.json())
       .then(data => {
-        setFiles(data);
+        // 🔥 SUPPORT BOTH API FORMATS
+        setFiles(data.data || data);
+        setTotalPages(data.totalPages || 1);
         setLoading(false);
       })
       .catch(err => {
@@ -40,23 +43,15 @@ export default function Home() {
         setLoading(false);
       });
 
-  }, []);
+  }, [currentPage]);
 
-  // FILTER
-  const filteredFiles =
-    category === "all"
+  const filteredFiles = useMemo(() => {
+    return category === "all"
       ? files
       : files.filter((f) => f.type === category);
+  }, [category, files]);
 
   // PAGINATION
-  const totalPages = Math.ceil(filteredFiles.length / FILES_PER_PAGE);
-
-  const startIndex = (currentPage - 1) * FILES_PER_PAGE;
-
-  const paginatedFiles = filteredFiles.slice(
-    startIndex,
-    startIndex + FILES_PER_PAGE
-  );
 
   const handlePageChange = (page) => {
     navigate(`/?page=${page}`);
@@ -75,13 +70,13 @@ export default function Home() {
     description:
       "Browse and download premium and free CorelDRAW (CDR) vector files at CDR World.",
     url: "https://cdrworld.vercel.app/",
-    numberOfItems: filteredFiles.length,
-    itemListElement: paginatedFiles.map((file, index) => ({
+    numberOfItems: files.length,
+    itemListElement: filteredFiles.map((file, index) => ({
       "@type": "ListItem",
-      position: startIndex + index + 1,
+      position: index + 1,
       url: `https://cdrworld.vercel.app/detail/${createSlug(file.title)}-${file._id}`,
       name: file.title,
-      image: file.image,
+      image: `${file.image}?w=400&q=70`,
       item: {
         "@type": "CreativeWork",
         genre: file.type,
@@ -93,7 +88,7 @@ export default function Home() {
   return (
 
     <>
-     <SEO
+      <SEO
         title="Free CDR Files Download | CorelDRAW Designs | CDRWORLD"
         description="Download high-quality CorelDRAW (CDR) vector files for free and premium use. Explore logo designs, stickers, business cards, vehicle branding and more at CDR World."
         keywords="CDR files, CorelDRAW designs, free CDR download, premium vector files, CorelDRAW templates, logo design CDR, sticker design CDR, vehicle branding CDR, vector files download"
@@ -111,7 +106,7 @@ export default function Home() {
           title: "CDR World - CorelDRAW Files",
           description: "Download free and premium CorelDRAW vector files easily.",
           image: "https://cdrworld.vercel.app/cdrworld-preview.png",
-          site: "@cdrworld", 
+          site: "@cdrworld",
         }}
         structuredData={structuredData}
         extraMeta={[{ name: "theme-color", content: "#0f766e" }]}
@@ -208,7 +203,7 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
 
-                  {paginatedFiles.map((file) => (
+                  {filteredFiles.map((file, index) => (
 
                     <Link
                       key={file._id}
@@ -220,9 +215,20 @@ export default function Home() {
                       <div className="relative">
 
                         <img
-                          src={file.image}
+                          src={`${file.image}?w=400&q=70`}
+                          srcSet={`
+    ${file.image}?w=300&q=60 300w,
+    ${file.image}?w=400&q=70 400w,
+    ${file.image}?w=600&q=80 600w
+  `}
+  
+                          loading={index < 3 ? "eager" : "lazy"}
+                          fetchpriority={index < 3 ? "high" : "auto"}
+                          decoding="async"
+                          width="400"
+                          height="300"
+                          style={{ aspectRatio: "4/3" }}
                           alt={file.title}
-                          loading="lazy"
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
 
