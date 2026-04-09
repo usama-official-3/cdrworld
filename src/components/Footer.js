@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Youtube, Facebook, MessageCircle, Mail } from 'lucide-react';
-import logo from "../images/logo.png";
+import logo from "../images/logo.webp";
 export default function Footer() {
    const phoneNumber = "923015702929";
 const message =
@@ -15,18 +15,25 @@ const message =
           <div>
          <Link to="/" className="inline-block mb-4">
               <div className="bg-white p-1 rounded-lg shadow-md w-fit">
-                <img
-                  src={logo}
-                  alt="CDR World Logo"
-                  className=" h-7
-        xxsm:h-8
-        xsm:h-9
-        sm:h-11
-        md:h-11
-        2xl:h-12
-      
-        object-contain"
-                />
+               <img
+  src={logo}
+  alt="CDR World Logo"
+  width="120"
+  height="40"
+  loading="eager"
+  fetchPriority="high"
+  decoding="async"
+  className="
+    h-7
+    xxsm:h-8
+    xsm:h-9
+    sm:h-11
+    md:h-11
+    2xl:h-12
+    w-auto
+    object-contain
+  "
+/>
               </div>
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed">

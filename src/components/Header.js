@@ -12,7 +12,7 @@ import {
   ShieldUser,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext"; // adjust path if needed
-import logo from "../images/logo.png"; 
+import logo from "../images/logo.webp"; 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { user, logout } = useAuth();
@@ -50,17 +50,24 @@ const isAdmin = user?.role === "admin";
 <Link to="/" className="flex items-center">
  <div className="bg-white p-1 rounded-lg shadow-md w-fit">
     <img
-      src={logo}
-      alt="CDR World Logo"
-      className=" h-7
-        xxsm:h-8
-        xsm:h-9
-        sm:h-11
-        md:h-11
-        2xl:h-12
-      
-        object-contain"
-    />
+  src={logo}
+  alt="CDR World Logo"
+  width="120"
+  height="40"
+  loading="eager"
+  fetchPriority="high"
+  decoding="async"
+  className="
+    h-7
+    xxsm:h-8
+    xsm:h-9
+    sm:h-11
+    md:h-11
+    2xl:h-12
+    w-auto
+    object-contain
+  "
+/>
     </div>
 </Link>
 
